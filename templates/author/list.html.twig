@@ -1,0 +1,30 @@
+<h1 >liste </h1>
+{{x}}
+{% set sum=0 %}
+{% if authors is empty %}
+<h1 aaaaa </h1>
+{%else%}
+<br>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Nom d'utilisateur</th>
+        <th>Nbr books</th>
+        <th>details</th>
+
+    </tr>
+    {% for i in authors %}
+    <tr>
+        <td>{{ i.id }}</td>
+        <td>{{ i.username | upper }}</td>
+        <td>{{ i.nb_books }}</td>
+        <td><a href="#">details</a></td>
+
+    </tr>
+     {% set sum = sum + i.nb_books %}
+
+   {% endfor %}
+</table>
+{% endif %}
+number = {{authors |length}}
+sum books ={{sum}}
